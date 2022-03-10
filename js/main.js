@@ -16,3 +16,43 @@ E se volessi un bottone per invertire la "direzione" del carosello?
 
  *
  */
+
+//! bisogna creare un un array di oggetti
+//* le elementi da inserire sono 
+//* - immagini
+//* - title immagini
+//* - description
+
+const carouselElements = [
+    {
+        image: "";
+        title: "";
+        description: "";
+    }
+    {
+        image: "";
+        title: "";
+        description: "";
+    }
+    {
+        image: "";
+        title: "";
+        description: "";
+    }
+    {
+        image: "";
+        title: "";
+        description: "";
+    }
+    {
+        image: "";
+        title: "";
+        description: "";
+    }
+];
+
+//! creare il codice per inserire gli elementi all'interno del DOM dell'id "my-before-carousel"
+
+
+//! inserire gli elementi creati all'interno del DOM  di "my-before-carousel"
+document.getElementById('my-before-carousel').innerHTML = "";
