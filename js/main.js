@@ -71,7 +71,15 @@ boxItems[activeElement].classList.add('active');
 //! inserire degli event listener sui bottoni left e right
 
 document.querySelector('.my-previous').addEventListener('click', function() {
+    boxItems[activeElement].classList.remove('active');
 
+    if ( activeElement == 0) {
+        activeElement = boxItems.length - 1
+    } else {
+        activeElement--;
+    }
+
+    boxItems[activeElement].classList.add('active');
 })
 
 document.querySelector('.my-next').addEventListener('click', function() {
@@ -80,8 +88,15 @@ document.querySelector('.my-next').addEventListener('click', function() {
     //* la prima immagine remove classe active
     //* la secondo immagine add classe active
 
-boxItems[0].classList.remove('active');
-boxItems[1].classList.add('active');
+    boxItems[activeElement].classList.remove('active');
+
+    if (activeElement == boxItems.length - 1) {
+        activeElement = 0;
+    } else {
+        activeElement++;
+    }
+
+    boxItems[activeElement].classList.add('active');
 
 })
 
