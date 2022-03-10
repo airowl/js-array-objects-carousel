@@ -78,7 +78,6 @@ const boxItemsThumb = document.querySelectorAll('.thumbnails-img');
 boxItemsThumb[activeElement].classList.add('active-thumb');
 
 //! inserire degli event listener sui bottoni left e right
-
 document.querySelector('.my-previous').addEventListener('click', function() {
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
@@ -108,6 +107,25 @@ document.querySelector('.my-next').addEventListener('click', function() {
     boxItemsThumb[activeElement].classList.add('active-thumb');
 
 });
+
+const timeForNext = setInterval(() => {
+
+    boxItems[activeElement].classList.remove('active');
+    boxItemsThumb[activeElement].classList.remove('active-thumb');
+
+    if (activeElement == boxItems.length - 1) {
+        activeElement = 0;
+    } else {
+        activeElement++;
+    }
+
+    boxItems[activeElement].classList.add('active');
+    boxItemsThumb[activeElement].classList.add('active-thumb');
+    
+}, 1000);
+
+
+//?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@FUNCTIONS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 /**
  * Funzione per creare un elemento da aggiungere al DOM
