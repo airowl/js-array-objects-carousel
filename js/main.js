@@ -61,6 +61,10 @@ for (let i = 0; i < carouselElements.length; i++) {
 //! inserire gli elementi creati all'interno del DOM  di "my-before-carousel"
 document.querySelector('.my-carousel-images').innerHTML += elementsDom ;
 
+//! Devo inserire la class active al primo elemento per far si che si veda
+let activeElement = 0;
+
+document.querySelectorAll('.box')[activeElement].classList.add('active');
 
 /**
  * Funzione per creare un elemento da aggiungere al DOM
