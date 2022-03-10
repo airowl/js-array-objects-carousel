@@ -13,6 +13,7 @@ div.my-carousel-images{
 
 div.my-thumbnails{
     min-height: 160px;
+    display: flex;
 }
 
 div.my-previous,

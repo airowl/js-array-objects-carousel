@@ -57,6 +57,13 @@ for (let i = 0; i < carouselElements.length; i++) {
     
     elementsDom += addElements(carouselElements[i].image, carouselElements[i].title, carouselElements[i].description);
 
+}
+
+//! creazione di elementi per la thumbnails
+let elementsDomThumb = "";
+for (let i = 0; i < carouselElements.length; i++) {
+    
+    elementsDomThumb += addElementsThumb(carouselElements[i].image);
 
 }
 
@@ -64,7 +71,7 @@ for (let i = 0; i < carouselElements.length; i++) {
 document.querySelector('.my-carousel-images').innerHTML += elementsDom;
 
 //! inserire gli elementi creati all'interno del DOM di "my-thumbnails"
-document.querySelector('.my-thumbnails').innerHTML += addElementsThumb(carouselElements[0].image);
+document.querySelector('.my-thumbnails').innerHTML += elementsDomThumb;
 
 
 //! Devo inserire la class active al primo elemento per far si che si veda
