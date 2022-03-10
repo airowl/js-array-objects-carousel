@@ -53,18 +53,10 @@ const carouselElements = [
 
 //! creare il codice per inserire gli elementi all'interno del DOM dell'id "my-before-carousel"
 let elementsDom = "";
-for (let i = 0; i < carouselElements.length; i++) {
-    
-    elementsDom += addElements(carouselElements[i].image, carouselElements[i].title, carouselElements[i].description);
-
-}
-
-//! creazione di elementi per la thumbnails
 let elementsDomThumb = "";
 for (let i = 0; i < carouselElements.length; i++) {
-    
+    elementsDom += addElements(carouselElements[i].image, carouselElements[i].title, carouselElements[i].description);
     elementsDomThumb += addElementsThumb(carouselElements[i].image);
-
 }
 
 //! inserire gli elementi creati all'interno del DOM  di "my-before-carousel"
@@ -72,7 +64,6 @@ document.querySelector('.my-carousel-images').innerHTML += elementsDom;
 
 //! inserire gli elementi creati all'interno del DOM di "my-thumbnails"
 document.querySelector('.my-thumbnails').innerHTML += elementsDomThumb;
-
 
 //! Devo inserire la class active al primo elemento per far si che si veda
 let activeElement = 0;
@@ -100,13 +91,9 @@ document.querySelector('.my-previous').addEventListener('click', function() {
 
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
-})
+});
 
 document.querySelector('.my-next').addEventListener('click', function() {
-
-    //! primo click
-    //* la prima immagine remove classe active
-    //* la secondo immagine add classe active
 
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
@@ -120,7 +107,7 @@ document.querySelector('.my-next').addEventListener('click', function() {
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
 
-})
+});
 
 /**
  * Funzione per creare un elemento da aggiungere al DOM
