@@ -81,10 +81,16 @@ const boxItems = document.querySelectorAll('.box');
 
 boxItems[activeElement].classList.add('active');
 
+//! inserimento della classe active al primo thumbnail image
+const boxItemsThumb = document.querySelectorAll('.thumbnails-img');
+
+boxItemsThumb[activeElement].classList.add('active-thumb');
+
 //! inserire degli event listener sui bottoni left e right
 
 document.querySelector('.my-previous').addEventListener('click', function() {
     boxItems[activeElement].classList.remove('active');
+    boxItemsThumb[activeElement].classList.remove('active-thumb');
 
     if ( activeElement == 0) {
         activeElement = boxItems.length - 1
@@ -93,6 +99,7 @@ document.querySelector('.my-previous').addEventListener('click', function() {
     }
 
     boxItems[activeElement].classList.add('active');
+    boxItemsThumb[activeElement].classList.add('active-thumb');
 })
 
 document.querySelector('.my-next').addEventListener('click', function() {
@@ -102,6 +109,7 @@ document.querySelector('.my-next').addEventListener('click', function() {
     //* la secondo immagine add classe active
 
     boxItems[activeElement].classList.remove('active');
+    boxItemsThumb[activeElement].classList.remove('active-thumb');
 
     if (activeElement == boxItems.length - 1) {
         activeElement = 0;
@@ -110,6 +118,7 @@ document.querySelector('.my-next').addEventListener('click', function() {
     }
 
     boxItems[activeElement].classList.add('active');
+    boxItemsThumb[activeElement].classList.add('active-thumb');
 
 })
 
