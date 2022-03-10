@@ -90,6 +90,9 @@ document.querySelector('.my-previous').addEventListener('click', function() {
 
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
+
+    stopSetInterval(timeGo);
+    stopSetInterval(timeBack);
 });
 
 document.querySelector('.my-next').addEventListener('click', function() {
@@ -106,8 +109,29 @@ document.querySelector('.my-next').addEventListener('click', function() {
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
 
+    stopSetInterval(timeGo);
+    stopSetInterval(timeBack);
+
 });
 
+// for (let i = 0; i < boxItemsThumb.length; i++) {
+    
+//     boxItemsThumb[i].addEventListener('click', function(){
+
+//         if (boxItemsThumb[i].classList.contains('active-thumb') && boxItems[i].classList.contains('active')) {
+//             boxItemsThumb[i].classList.remove('active-thumb');
+//             boxItems[i].classList.remove('active');
+//         } else {
+//             boxItemsThumb[i].classList.add('active-thumb');
+//             boxItems[i].classList.add('active');
+//         }
+
+//     });
+
+// }
+
+
+//!! set interval part
 document.getElementById('my-after-carousel').classList.add('d-flex', 'justify-content-evenly');
 
 document.getElementById('my-after-carousel').innerHTML = `
@@ -139,6 +163,11 @@ document.querySelector('#time-left').addEventListener('click', function() {
 
 
 //?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@FUNCTIONS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+function clickAndSelect(x){
+    
+
+}
 
 function timeNext(){
     boxItems[activeElement].classList.remove('active');

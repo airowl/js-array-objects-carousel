@@ -79,7 +79,7 @@ div.my-next > span::after{
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
 }
 
 .box .carousel-text{
@@ -95,6 +95,7 @@ div.my-next > span::after{
     width: calc(100% / 5);
     height: 160px;
     filter: brightness(.4);
+    cursor: pointer;
 }
 
 .thumbnails-img.active-thumb{
