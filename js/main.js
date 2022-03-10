@@ -91,8 +91,8 @@ document.querySelector('.my-previous').addEventListener('click', function() {
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
 
-    stopSetInterval(timeGo);
-    stopSetInterval(timeBack);
+    clearInterval(timeGo);
+    clearInterval(timeBack);
 });
 
 document.querySelector('.my-next').addEventListener('click', function() {
@@ -109,8 +109,8 @@ document.querySelector('.my-next').addEventListener('click', function() {
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
 
-    stopSetInterval(timeGo);
-    stopSetInterval(timeBack);
+    clearInterval(timeGo);
+    clearInterval(timeBack);
 
 });
 
@@ -143,7 +143,7 @@ let timeGo;
 
 document.querySelector('#time-right').addEventListener('click', function() {
     
-    stopSetInterval(timeBack);
+    clearInterval(timeBack);
 
     const timeForNext = setInterval(timeNext, 1000);
 
@@ -154,7 +154,7 @@ let timeBack;
 
 document.querySelector('#time-left').addEventListener('click', function() {
     
-    stopSetInterval(timeGo);
+    clearInterval(timeGo);
 
     const timeForPrev = setInterval(timePrev, 1000);
 
@@ -164,11 +164,9 @@ document.querySelector('#time-left').addEventListener('click', function() {
 
 //?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@FUNCTIONS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-function clickAndSelect(x){
-    
-
-}
-
+/**
+ * funzione per il setInterval da sinistra a destra
+ */
 function timeNext(){
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
@@ -183,6 +181,9 @@ function timeNext(){
     boxItemsThumb[activeElement].classList.add('active-thumb');
 }
 
+/**
+ * funzione per il setInterval da destra a sinistra
+ */
 function timePrev(){
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
@@ -195,10 +196,6 @@ function timePrev(){
 
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
-}
-
-function stopSetInterval(nameOFSetInterval){
-    clearInterval(nameOFSetInterval);
 }
 
 /**
@@ -222,6 +219,12 @@ function addElements(img, title, desc) {
     `;
 }
 
+/**
+ * funzione per creare un nuovo elemento nel DOM thumbnails
+ * 
+ * @param {*} img 
+ * @returns 
+ */
 function addElementsThumb(img) {
     return `
     <div class="thumbnails-img">
