@@ -64,7 +64,26 @@ document.querySelector('.my-carousel-images').innerHTML += elementsDom ;
 //! Devo inserire la class active al primo elemento per far si che si veda
 let activeElement = 0;
 
-document.querySelectorAll('.box')[activeElement].classList.add('active');
+const boxItems = document.querySelectorAll('.box');
+
+boxItems[activeElement].classList.add('active');
+
+//! inserire degli event listener sui bottoni left e right
+
+document.querySelector('.my-previous').addEventListener('click', function() {
+
+})
+
+document.querySelector('.my-next').addEventListener('click', function() {
+
+    //! primo click
+    //* la prima immagine remove classe active
+    //* la secondo immagine add classe active
+
+boxItems[0].classList.remove('active');
+boxItems[1].classList.add('active');
+
+})
 
 /**
  * Funzione per creare un elemento da aggiungere al DOM
