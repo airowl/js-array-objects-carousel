@@ -25,29 +25,29 @@ E se volessi un bottone per invertire la "direzione" del carosello?
 
 const carouselElements = [
     {
-        image: "";
-        title: "";
-        description: "";
-    }
+        image: "1.jpg",
+        title: "Lorem Ipsum",
+        description: "Lorem ipsum description"
+    },
     {
-        image: "";
-        title: "";
-        description: "";
-    }
+        image: "2.jpg",
+        title: "Lorem Ipsum",
+        description: "description"
+    },
     {
-        image: "";
-        title: "";
-        description: "";
-    }
+        image: "3.jpg",
+        title: "Lorem Ipsum",
+        description: "description"
+    },
     {
-        image: "";
-        title: "";
-        description: "";
-    }
+        image: "4.jpg",
+        title: "Lorem Ipsum",
+        description: "description"
+    },
     {
-        image: "";
-        title: "";
-        description: "";
+        image: "5.jpg",
+        title: "Lorem Ipsum",
+        description: "description"
     }
 ];
 
