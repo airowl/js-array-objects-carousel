@@ -56,10 +56,16 @@ let elementsDom = "";
 for (let i = 0; i < carouselElements.length; i++) {
     
     elementsDom += addElements(carouselElements[i].image, carouselElements[i].title, carouselElements[i].description);
+
+
 }
 
 //! inserire gli elementi creati all'interno del DOM  di "my-before-carousel"
-document.querySelector('.my-carousel-images').innerHTML += elementsDom ;
+document.querySelector('.my-carousel-images').innerHTML += elementsDom;
+
+//! inserire gli elementi creati all'interno del DOM di "my-thumbnails"
+document.querySelector('.my-thumbnails').innerHTML += addElementsThumb(carouselElements[0].image);
+
 
 //! Devo inserire la class active al primo elemento per far si che si veda
 let activeElement = 0;
@@ -109,7 +115,6 @@ document.querySelector('.my-next').addEventListener('click', function() {
  * @returns elemento
  */
 function addElements(img, title, desc) {
-    let item = "";
     return `
     <div class="box">
         <div class="overlay"></div>
@@ -118,6 +123,14 @@ function addElements(img, title, desc) {
             <h3>${title}</h3>
             <p>${desc}</p>
         </div>
+    </div>
+    `;
+}
+
+function addElementsThumb(img) {
+    return `
+    <div class="thumbnails-img">
+        <img src="img/${img}" alt="name Image" />
     </div>
     `;
 }
