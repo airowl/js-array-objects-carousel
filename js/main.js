@@ -53,6 +53,22 @@ const carouselElements = [
 
 //! creare il codice per inserire gli elementi all'interno del DOM dell'id "my-before-carousel"
 
+function addElements(img, title, desc) {
+    let item = "";
+    return `
+    
+    `;
+}
+
 
 //! inserire gli elementi creati all'interno del DOM  di "my-before-carousel"
-document.getElementById('my-before-carousel').innerHTML = "";
+document.querySelector('.my-carousel-images').innerHTML = `
+    <div class="box">
+        <div class="overlay"></div>
+        <img src="img/1.jpg" alt="name Image" />
+        <div class="carousel-text">
+            <h3>Title image</h3>
+            <p>Lorem ipsum description</p>
+        </div>
+    </div>
+`;

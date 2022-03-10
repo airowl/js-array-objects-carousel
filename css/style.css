@@ -52,3 +52,37 @@ div.my-next > span::after{
     content: "\f520";
     line-height: 30px;
 }
+
+.box{
+    width: 100%;
+    height: 540px;
+    position: relative;
+}
+
+.box > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.box .carousel-text{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+    z-index: 2;
+    color: white;
+}
