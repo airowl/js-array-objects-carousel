@@ -26,28 +26,28 @@ E se volessi un bottone per invertire la "direzione" del carosello?
 const carouselElements = [
     {
         image: "1.jpg",
-        title: "Lorem Ipsum",
-        description: "Lorem ipsum description"
+        title: "THE DEVELOPER",
+        description: "Fa tante cose FIGHE che non capisce"
     },
     {
         image: "2.jpg",
-        title: "Lorem Ipsum",
-        description: "description"
+        title: "THE CODE",
+        description: "Che manco io capisco"
     },
     {
         image: "3.jpg",
-        title: "Lorem Ipsum",
-        description: "description"
+        title: "THE SCRIVANIA",
+        description: "Mi serve solo per appoggiare il pc e il cibo che mangio"
     },
     {
         image: "4.jpg",
-        title: "Lorem Ipsum",
-        description: "description"
+        title: "THE OCCHIALI",
+        description: "Mi servono per vedere non per annusare"
     },
     {
         image: "5.jpg",
-        title: "Lorem Ipsum",
-        description: "description"
+        title: "THE CODE, again",
+        description: "Questo lo copiato, Grazie stackoverflow"
     }
 ];
 
@@ -122,7 +122,7 @@ const timeForNext = setInterval(() => {
     boxItems[activeElement].classList.add('active');
     boxItemsThumb[activeElement].classList.add('active-thumb');
     
-}, 1000);
+}, 5000);
 
 
 //?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@FUNCTIONS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

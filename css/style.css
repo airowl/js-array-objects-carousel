@@ -3,6 +3,26 @@ body{
     background-color: #14213d;
 }
 
+body::before {
+    font: var(--fa-font-solid);
+    content: "\f188";
+    color: #e5e5e5;
+    opacity: .5;
+    font-size: 15rem;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    transform: rotate(45deg);
+}
+
+main > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
 div.my-carousel-container{
     min-height: 700px;
     min-width:800px ;
@@ -99,7 +119,7 @@ div.my-next > span::after{
 
 .thumbnails-img.active-thumb{
     filter: brightness(1);
-    border: 5px solid black;
+    border: 5px solid #fca311;
 }
 
 .thumbnails-img > img{
