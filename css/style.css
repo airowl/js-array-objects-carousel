@@ -10,6 +10,7 @@ div.my-carousel-container{
 
 div.my-carousel-images{
     min-height: 540px;
+    overflow-x: hidden;
 }
 
 div.my-thumbnails{

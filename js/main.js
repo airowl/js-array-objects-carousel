@@ -79,17 +79,8 @@ boxItemsThumb[activeElement].classList.add('active-thumb');
 
 //! inserire degli event listener sui bottoni left e right
 document.querySelector('.my-previous').addEventListener('click', function() {
-    boxItems[activeElement].classList.remove('active');
-    boxItemsThumb[activeElement].classList.remove('active-thumb');
 
-    if ( activeElement == 0) {
-        activeElement = boxItems.length - 1
-    } else {
-        activeElement--;
-    }
-
-    boxItems[activeElement].classList.add('active');
-    boxItemsThumb[activeElement].classList.add('active-thumb');
+    elementsPrev();
 
     clearInterval(timeGo);
     clearInterval(timeBack);
@@ -97,39 +88,12 @@ document.querySelector('.my-previous').addEventListener('click', function() {
 
 document.querySelector('.my-next').addEventListener('click', function() {
 
-    boxItems[activeElement].classList.remove('active');
-    boxItemsThumb[activeElement].classList.remove('active-thumb');
-
-    if (activeElement == boxItems.length - 1) {
-        activeElement = 0;
-    } else {
-        activeElement++;
-    }
-
-    boxItems[activeElement].classList.add('active');
-    boxItemsThumb[activeElement].classList.add('active-thumb');
+    elementsNext();
 
     clearInterval(timeGo);
     clearInterval(timeBack);
 
 });
-
-// for (let i = 0; i < boxItemsThumb.length; i++) {
-    
-//     boxItemsThumb[i].addEventListener('click', function(){
-
-//         if (boxItemsThumb[i].classList.contains('active-thumb') && boxItems[i].classList.contains('active')) {
-//             boxItemsThumb[i].classList.remove('active-thumb');
-//             boxItems[i].classList.remove('active');
-//         } else {
-//             boxItemsThumb[i].classList.add('active-thumb');
-//             boxItems[i].classList.add('active');
-//         }
-
-//     });
-
-// }
-
 
 //!! set interval part
 document.getElementById('my-after-carousel').classList.add('d-flex', 'justify-content-evenly');
@@ -145,7 +109,7 @@ document.querySelector('#time-right').addEventListener('click', function() {
     
     clearInterval(timeBack);
 
-    const timeForNext = setInterval(timeNext, 1000);
+    const timeForNext = setInterval(elementsNext, 1000);
 
     timeGo = timeForNext
 });
@@ -156,7 +120,7 @@ document.querySelector('#time-left').addEventListener('click', function() {
     
     clearInterval(timeGo);
 
-    const timeForPrev = setInterval(timePrev, 1000);
+    const timeForPrev = setInterval(elementsPrev, 1000);
 
     timeBack = timeForPrev
 });
@@ -167,7 +131,7 @@ document.querySelector('#time-left').addEventListener('click', function() {
 /**
  * funzione per il setInterval da sinistra a destra
  */
-function timeNext(){
+function elementsNext(){
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
 
@@ -184,7 +148,7 @@ function timeNext(){
 /**
  * funzione per il setInterval da destra a sinistra
  */
-function timePrev(){
+function elementsPrev(){
     boxItems[activeElement].classList.remove('active');
     boxItemsThumb[activeElement].classList.remove('active-thumb');
 
